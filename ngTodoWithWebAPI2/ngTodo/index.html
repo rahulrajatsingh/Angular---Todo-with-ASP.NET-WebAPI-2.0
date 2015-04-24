@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="todoApp">
+<head>
+    <title>My own ToDo app</title>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="app/app.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/main/MainController.js"></script>
+    <script src="app/login/LoginController.js"></script>
+    <script src="app/register/RegisterController.js"></script>
+    <script src="app/services/ItemService.js"></script>
+    <script src="app/services/AccountService.js"></script>
+    <script src="app/services/AuthenticationInterceptorService.js"></script>
+
+</head>
+<body class="container">
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<p>	{{message}}</p>
+
+
+<form role="form" class="form-horizontal" name="registerForm" novalidate>
+    <div class="form-group">
+        <label for="username" class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+            <input type="text" id="username" name="username" class="form-control" ng-model="loginModel.username" required>
+            <span style="color:red" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
+                <span ng-show="registerForm.username.$error.required">Full name is required</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="col-sm-3 control-label">Passsword</label>
+        <div class="col-sm-9">
+            <input type="text" id="password" name="password" class="form-control" ng-model="loginModel.password" required>
+            <span style="color:red" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+                <span ng-show="registerForm.password.$error.required">Password is required</span>
+            </span>
+        </div>
+    </div>
+
+    {{error}}
+
+    <br />
+    <div class="col-sm-offset-3 col-sm-9">
+        <input type="submit" class="btn btn-primary" value="Login" ng-click="submitForm()" />
+        <input type="submit" class="btn btn-primary" value="Create an account" ng-click="registerRedirect()" />
+    </div>
+
+
+</form>
+
+
+

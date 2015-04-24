@@ -1,0 +1,35 @@
+﻿<form role="form" class="form-horizontal">
+    <input type="button" value="Logout" ng-click="logout()" ng-show="{{IsAuthenticated}}" />
+    
+    <br />
+    <fieldset>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <input type="text" id="task" name="task" class="form-control" ng-model="newTask" ng-keyup="onKeyUpOnAdd($event)">
+            </div>
+            <div class="col-sm-2">
+                <input type="button" class="btn btn-primary" value="Add" ng-click="addTask()" />
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="checkbox" ng-repeat="item in todoList">
+                <div class="form-control" ng-show="{{itemBeingEdited.Id != item.Id}}">
+                    <span class="glyphicon glyphicon-remove pull-right" ng-click="deleteTask(item)"></span>
+                    <input type="checkbox" value="perkCar" ng-model="item.Completed" ng-click="updateTask(item)" />
+                    <label class="{{getClass(item.Completed)}}" ng-dblclick="editItem(item)">{{item.Item}}</label>
+                </div>
+                <div class="form-control" ng-show="{{itemBeingEdited.Id == item.Id}}">
+                    <span class="glyphicon glyphicon-remove pull-right" ng-click="deleteTask(item)"></span>
+                    <input type="checkbox" value="perkCar" ng-model="item.Completed" ng-click="updateTask(item)" />
+                    <input type="text" ng-model="itemBeingEdited.Item" class="col-xs-pull-8" autofocus ng-keyup="onKeyUpOnEdit($event)" />
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+
+
+
+</form>
+

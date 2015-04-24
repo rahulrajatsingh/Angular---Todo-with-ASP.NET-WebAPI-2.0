@@ -1,0 +1,11 @@
+﻿.striked {
+    text-decoration: line-through;
+    color:grey;
+    font-size:larger;
+}
+
+.notstriked {
+    text-decoration: none;
+    color:black;
+    font-size:larger;
+}
